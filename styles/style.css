@@ -1,0 +1,28 @@
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --crimson: #990000;
+}
+
+main {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.subsec > h1 {
+    text-align: center;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icon {
+    
+}
