@@ -1,3 +1,4 @@
+/* Global/General Styles */
 
 * {
     box-sizing: border-box;
@@ -7,12 +8,49 @@
     --crimson: #990000;
     --carolina-blue: #95adf4;
     --midnight-whisper: #262626;
-    --dark-gray: #a3a19d;
+    --platinum: #eaeaea;
+    --pad-standard: 1rem;
+    --pad-thin: 0.5rem;
+}
+
+body {
+    background-color: var(--midnight-whisper);
+    color: var(--platinum);
+}
+
+/* Google Fonts */
+.gothic {
+  font-family: "Gothic A1", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.gothic-thin {
+  font-family: "Gothic A1", sans-serif;
+  font-weight: 100;
+  font-style: normal;
 }
 
 main {
     width: 90%;
     margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: var(--pad-standard) auto 0 auto;
+}
+
+header > h1 {
+    background-color: var(--carolina-blue);
+    color: var(--midnight-whisper);
+    padding: var(--pad-thin);
+    text-align: left;
+    margin-top: 0;
+    width: 100%;
 }
 
 .subsec > h1 {
@@ -25,12 +63,30 @@ main {
     border: var(--crimson) 2px solid;
 }
 
-.contact-info, .contact-info > li {
+/* .contact-info {
+    width: 100%;
+} */
+
+.contact-info {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: var(--pad-thin);
+    margin: var(--pad-standard) var(--pad-thin) ;
+}
+
+.contact-info > li {
+    list-style-type: none;
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
+    min-width: 240px;
+    margin: var(--pad-thin);
 }
+
 
 #certs > li {
     display: flex;
