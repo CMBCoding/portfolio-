@@ -19,6 +19,8 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--midnight-whisper);
     color: var(--platinum);
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
 main {
@@ -28,6 +30,10 @@ main {
 
 ul {
     padding-left: 0;  /* Removes the annoying auto left space*/
+}
+
+p {
+    margin: 0.55rem;
 }
 
 .subsec {
@@ -64,7 +70,7 @@ h3 {
 }
 
 /* Header Section Stylings */
-header {
+#header-section {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -72,10 +78,10 @@ header {
     margin: var(--spacer-standard) auto 0 auto;
 }
 
-header > h1 {
+#header-section > h1 {
     background-color: var(--carolina-blue);
     color: var(--midnight-whisper);
-    padding: var(--spacer-standar);
+    padding: var(--spacer-thin);
     text-align: left;
     margin-top: 0;
     width: 100%;
@@ -99,7 +105,7 @@ header > h1 {
 #summary > p {
     grid-area: sum-txt;
     text-align: left;
-    margin-left: var(--spacer-thin);
+    margin-left: var(--spacer-extra);
 }
 
 #profile {
@@ -116,8 +122,9 @@ header > h1 {
     align-content: center;
     justify-content: space-evenly;
     width: 100%;
-    padding: var(--spacer-thin);
-    margin: var(--spacer-standard) var(--spacer-thin) ;
+    margin: var(--spacer-thin) 0;
+    padding: 0;
+    gap: 0.5rem;
 }
 
 .contact-info > li{
@@ -126,12 +133,12 @@ header > h1 {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    min-width: 260px;
-    margin: var(--spacer-thin);
+    width: 260px;
+    /* margin: var(--spacer-thin); */
     font-weight: 600;
 }
 
-.contact-links > a {
+ .contact-links > a {
     list-style-type: none;
     display: flex;
     flex-direction: row;
@@ -143,7 +150,7 @@ header > h1 {
     text-decoration: none;
 }
 
-a:hover {
+a:hover,a:focus {
     color: var(--carolina-blue);
 }
 
@@ -189,7 +196,26 @@ a:hover {
 }
 
 /* Mobile Layout */
-@media screen and (min-width: 400px) and (max-width: 900px) {
+@media screen and (min-width: 400px) and (max-width: 590px) {
+    
+    /* Header Section Stylings */
+    #header-section > h1 {text-align: center;}
+
+    /* Global/General Styles */
+    h3 {margin-bottom: var(--spacer-thin);}
+
+    .contact-info {
+        gap: 0;
+        justify-content: flex-start;
+        margin: 0 var(--spacer-thin);
+    }
+
+    .contact-info > li, 
+    .contact-links > a {
+        width: 100%;
+    }
+    
+    /* Summary Section Stylings */
     #summary {
         grid-template-areas: 
         "sum-hd"
@@ -199,6 +225,7 @@ a:hover {
 
     #summary > p {
         text-align: left;
+        margin-left: var(--spacer-thin);
     }
 
     #profile {
@@ -218,6 +245,10 @@ a:hover {
     #skills-mobile {
         display: flex;
         flex-direction: column;
+    }
+
+    #skills-mobile > strong {
+        margin: var(--spacer-thin) 0;
     }
 
     .skills-ribbon {
@@ -253,4 +284,44 @@ a:hover {
         margin-right: 0.2rem;
         margin-left: 0;
     }
+}
+
+/* Tablet/Half-Screen Layout */
+@media screen and (min-width: 600px) and (max-width: 800px) {
+    
+    /* Global/General Styles */
+    h3 {margin-bottom: var(--spacer-thin);}
+
+    .contact-info {
+        margin: 0 var(--spacer-thin);
+    }
+
+    .contact-info > li, .contact-links > a {
+        justify-content: flex-start;
+        align-items: center;
+    }
+    
+    /* Summary Section Stylings */
+    #summary {
+        grid-template-areas: 
+        "sum-hd"
+        "profile"
+        "sum-txt";
+        padding-bottom: var(--spacer-thin);
+    }
+
+    #summary > p {
+        text-align: left;
+        margin-left: var(--spacer-thin);
+    }
+
+    #profile {
+        margin-left: var(--spacer-standard);
+    }
+
+    .subsec {
+        padding: var(--spacer-thin);
+        min-width: 340px;
+    }
+
 }
