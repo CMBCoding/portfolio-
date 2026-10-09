@@ -35,6 +35,7 @@ ul {
     box-shadow: -10px 10px 0px -7px var(--carolina-blue), 10px -10px 0px -7px var(--carolina-blue);
     margin: var(--spacer-plus) auto;
     padding: var(--spacer-thin) var(--spacer-extra);
+    min-width: 580px;
 }
 
 /* Google Fonts */
@@ -69,7 +70,27 @@ header > h1 {
 }
 
 /* Summary Section Stylings */
+#summary {
+    display: grid;
+    grid-template-areas: 
+    "sum-hd sum-hd"
+    "profile sum-txt";
+    padding-bottom: var(--spacer-extra);
+}
+
+#summary > h2 {
+    grid-area: sum-hd;
+    margin-left: var(--spacer-thin);
+}
+
+#summary > p {
+    grid-area: sum-txt;
+    text-align: center;
+    margin-left: var(--spacer-thin);
+}
+
 #profile {
+    grid-area: profile;
     width: 190px;
     height: 190px;
     box-shadow: -13px 13px 0px -7px var(--carolina-blue), 13px -13px 0px -7px var(--carolina-blue);
