@@ -73,8 +73,8 @@ header > h1 {
 #summary {
     display: grid;
     grid-template-areas: 
-    "sum-hd sum-hd"
-    "profile sum-txt";
+        "sum-hd sum-hd"
+        "profile sum-txt";
     padding-bottom: var(--spacer-extra);
 }
 
@@ -85,7 +85,7 @@ header > h1 {
 
 #summary > p {
     grid-area: sum-txt;
-    text-align: center;
+    text-align: left;
     margin-left: var(--spacer-thin);
 }
 
@@ -164,4 +164,35 @@ a:hover {
     width: 1.8rem;
     margin-right: 0.25rem;
     border: none;
+}
+
+/* Mobile Layout */
+@media screen and (min-width: 400px) and (max-width: 900px) {
+    #summary {
+        grid-template-areas: 
+        "sum-hd"
+        "profile"
+        "sum-txt";
+    }
+
+    #summary > p {
+        text-align: left;
+    }
+
+    #profile {
+        margin-left: var(--spacer-standard);
+    }
+
+    .subsec {
+        padding: var(--spacer-thin);
+        min-width: 340px;
+    }
+
+    #skills > li > .icon,
+    #certs > li > .icon {
+        height: 1.2rem;
+        width: 1.2rem;
+        margin-right: 0.25rem;
+        border: none;
+    }
 }
