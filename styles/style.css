@@ -19,7 +19,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--midnight-whisper);
     color: var(--platinum);
-    margin: 0 auto;
+    margin: 0 auto 5rem auto;
     max-width: 1200px;
 }
 
@@ -59,6 +59,11 @@ h3 {
 .card {
     border-bottom: var(--platinum) 1px solid;
     border-left: var(--platinum) 1px solid;
+    margin-bottom: var(--spacer-extra)
+}
+
+section > .card:last-of-type {
+    margin-bottom: 0;
 }
 
 /* Google Fonts */
@@ -111,6 +116,7 @@ h3 {
     grid-area: sum-txt;
     text-align: left;
     margin-left: var(--spacer-extra);
+    margin-top: var(--spacer-extra);
 }
 
 #profile {
@@ -139,7 +145,6 @@ h3 {
     justify-content: space-between;
     align-items: center;
     width: 260px;
-    /* margin: var(--spacer-thin); */
     font-weight: 600;
 }
 
@@ -200,6 +205,12 @@ a:hover,a:focus {
     border: none;
 }
 
+/* Education Section Stylings */
+.title-mark {
+    border-left: var(--carolina-blue) solid 2px;
+    margin-right: 0.25rem;
+}
+
 /* Mobile Layout */
 @media screen and (min-width: 400px) and (max-width: 590px) {
     
@@ -213,7 +224,7 @@ a:hover,a:focus {
     }
 
     .contact-info {
-        gap: 0;
+        gap: 0.5rem;
         justify-content: flex-start;
         margin: 0 var(--spacer-thin);
     }
@@ -234,6 +245,7 @@ a:hover,a:focus {
     #summary > p {
         text-align: left;
         margin-left: var(--spacer-thin);
+        margin-top: var(--spacer-standard);
     }
 
     #profile {
