@@ -38,8 +38,8 @@ p {
 
 .subsec {
     background-color: var(--midnight-whisper);
-    box-shadow: -10px 10px 0px -7px var(--carolina-blue), 10px -10px 0px -7px var(--carolina-blue);
-    margin: var(--spacer-plus) auto;
+    /* box-shadow: -10px 10px 0px -7px var(--carolina-blue), 10px -10px 0px -7px var(--carolina-blue); */
+    box-shadow: -10px 10px 0px -7px var(--carolina-blue);
     padding: var(--spacer-thin) var(--spacer-extra);
     min-width: 580px;
 }
@@ -51,10 +51,15 @@ h2 {
 
 h3 {
     text-decoration: underline var(--carolina-blue) 3px;
-    margin-bottom: 0;
+    margin: var(--spacer-standard) 0 var(--spacer-thin) var(--spacer-thin);
 }
 
 .card, .subsec > h2 {margin-left: var(--spacer-thin);}
+
+.card {
+    border-bottom: var(--platinum) 1px solid;
+    border-left: var(--platinum) 1px solid;
+}
 
 /* Google Fonts */
 .gothic {
@@ -155,18 +160,14 @@ a:hover,a:focus {
 }
 
 /* Skills and Certifications Section */
-#skills {
+#skills, #certs {
     display: flex;
     flex-direction: column;
+    margin-bottom: 0;
 }
 
 #skills-mobile {
     display: none;
-}
-
-#certs {
-    display: flex;
-    flex-direction: column;
 }
 
 #skills > li,
@@ -183,7 +184,11 @@ a:hover,a:focus {
     margin: 0.25rem 0.5rem;
 }
 
-#skills > li > strong, 
+#skills > li > strong {
+    margin-right: 0.35rem;
+    margin-left: 0.5rem;
+}
+
 #certs > li > strong {
     margin-right: 0.35rem;
 }
@@ -202,7 +207,10 @@ a:hover,a:focus {
     #header-section > h1 {text-align: center;}
 
     /* Global/General Styles */
-    h3 {margin-bottom: var(--spacer-thin);}
+    h3 {
+        margin-bottom: var(--spacer-thin);
+        margin-left: var(--spacer-thin);
+    }
 
     .contact-info {
         gap: 0;
@@ -248,7 +256,7 @@ a:hover,a:focus {
     }
 
     #skills-mobile > strong {
-        margin: var(--spacer-thin) 0;
+        margin: var(--spacer-thin) 0 var(--spacer-thin) var(--spacer-thin);
     }
 
     .skills-ribbon {
@@ -258,6 +266,10 @@ a:hover,a:focus {
         justify-content: flex-start;
         align-content: center;
         flex-wrap: wrap;
+    }
+
+    .skills-ribbon > img {
+        margin-left: var(--spacer-thin);
     }
 
     .skills-box {
@@ -281,8 +293,7 @@ a:hover,a:focus {
     #certs > li > .icon {
         height: 1.2rem;
         width: 1.2rem;
-        margin-right: 0.2rem;
-        margin-left: 0;
+        margin: 0.25rem 0.2rem;
     }
 }
 
@@ -290,7 +301,9 @@ a:hover,a:focus {
 @media screen and (min-width: 600px) and (max-width: 800px) {
     
     /* Global/General Styles */
-    h3 {margin-bottom: var(--spacer-thin);}
+    h3 {
+        margin: var(--spacer-standard) 0 var(--spacer-thin) var(--spacer-thin);
+    }
 
     .contact-info {
         margin: 0 var(--spacer-thin);
